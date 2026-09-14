@@ -52,8 +52,8 @@
 | Package | Status | Use It For | Quick Start |
 |---|---|---|---|
 | [**`@emailens/engine`**](https://github.com/emailens/engine) | `v0.12.3` (npm) | Core email compatibility & CSS scoring (298 features, 21 clients) | `npm install @emailens/engine` |
-| [**`@emailens/cli`**](https://github.com/emailens/cli) | `v0.1.0` (npm) | Terminal linting & automated CI/CD exit codes | `npx @emailens/cli lint email.html` |
-| [**`@emailens/mcp`**](https://github.com/emailens/mcp) | `v0.4.0` (npm) | Email QA in Claude Code, Cursor, and AI agents | `claude mcp add emailens -- npx -y @emailens/mcp` |
+| [**`@emailens/cli`**](https://github.com/emailens/cli) | `v0.6.0` (npm) | Terminal linting & automated CI/CD exit codes | `npx @emailens/cli lint email.html` |
+| [**`@emailens/mcp`**](https://github.com/emailens/mcp) | `v0.8.0` (npm) | Email QA in Claude Code, Cursor, and AI agents | `claude mcp add emailens -- npx -y @emailens/mcp` |
 | [**`emailens/action`**](https://github.com/emailens/action) | `v1` (Action) | Pull request quality gate in GitHub Actions | `uses: emailens/action@v1` |
 | [**`emailens/vscode`**](https://github.com/emailens/vscode) | *In Development* | Editor linting & side-by-side Outlook preview | *Coming soon to Marketplace* |
 

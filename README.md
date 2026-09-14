@@ -29,7 +29,7 @@
 <p align="center">
   <b>Your email looks perfect in Apple Mail. Gmail strips half the CSS. Outlook renders it in Microsoft Word.</b><br/>
   Across <b>298 CSS and HTML features</b> tracked, only <b>6 are fully supported</b> across all 21 email clients.<br/>
-  Emailens catches the other 292 before your users do — in the engine, in your terminal, in CI, and in AI coding agents.
+  Emailens catches the other 292 before your users do: in the engine, in your terminal, in CI, and in AI coding agents.
 </p>
 
 <div align="center">

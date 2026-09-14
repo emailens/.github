@@ -12,7 +12,7 @@
 **Write once. Know how it behaves across 21 email clients.**
 
 [![npm engine](https://img.shields.io/npm/v/@emailens/engine?label=@emailens/engine&color=8a7544)](https://www.npmjs.com/package/@emailens/engine)
-[![tests](https://img.shields.io/badge/tests-1108%20passing-brightgreen)]()
+[![tests](https://img.shields.io/badge/tests-1288%20passing-brightgreen)]()
 [![npm cli](https://img.shields.io/npm/v/@emailens/cli?label=@emailens/cli&color=blue)](https://www.npmjs.com/package/@emailens/cli)
 [![npm mcp](https://img.shields.io/npm/v/@emailens/mcp?label=@emailens/mcp&color=blue)](https://www.npmjs.com/package/@emailens/mcp)
 [![GitHub Action](https://img.shields.io/badge/GitHub-Action-2088FF)](https://github.com/emailens/action)
@@ -61,7 +61,7 @@
 
 ## ⚡ 1. The Core Engine (`@emailens/engine`)
 
-The open-source core powers all Emailens tooling. It parses HTML, simulates client quirks, transforms CSS per client, and evaluates 298 rules with 1,108 automated tests.
+The open-source core powers all Emailens tooling. It parses HTML, simulates client quirks, transforms CSS per client, and evaluates 298 rules with 1,288 automated tests.
 
 ```bash
 npm install @emailens/engine

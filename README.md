@@ -1,4 +1,4 @@
-﻿<div align="center">
+<div align="center">
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/emailens/.github/main/docs/wordmark-dark.svg">
@@ -28,7 +28,7 @@
 
 <p align="center">
   <b>Your email looks perfect in Apple Mail. Gmail strips half the CSS. Outlook renders it in Microsoft Word.</b><br/>
-  Across <b>298 CSS and HTML features</b> tracked, only <b>6 are fully supported</b> across all 21 email clients.<br/>
+  Across <b>298 CSS and HTML features</b> tracked, only <b>6 are fully supported</b> across all 21 clients.<br/>
   Emailens catches the other 292 before your users do: in the engine, in your terminal, in CI, and in AI coding agents.
 </p>
 
@@ -41,103 +41,62 @@
 <div align="center">
 
 **Frameworks:** React Email &nbsp;·&nbsp; MJML &nbsp;·&nbsp; Maizzle &nbsp;·&nbsp; Tailwind CSS &nbsp;·&nbsp; Raw HTML  
-**Clients:** Gmail &nbsp;·&nbsp; Outlook &nbsp;·&nbsp; Apple Mail &nbsp;·&nbsp; Yahoo Mail &nbsp;·&nbsp; Thunderbird &nbsp;·&nbsp; HEY &nbsp;·&nbsp; Superhuman &nbsp;·&nbsp; Samsung &nbsp;·&nbsp; Proton
+**Clients:** Gmail &nbsp;·&nbsp; Outlook &nbsp;·&nbsp; Apple Mail &nbsp;·&nbsp; Yahoo Mail &nbsp;·&nbsp; Thunderbird &nbsp;·&nbsp; HEY &nbsp;·&nbsp; Superhuman &nbsp;·&nbsp; Samsung
 
 </div>
 
 ---
 
-## 🛠️ Developer Ecosystem
+## 🛠️ Open-source ecosystem
 
-| Package | Status | Use It For | Quick Start |
+| Package | Status | Use it for | Quick start |
 |---|---|---|---|
-| [**`@emailens/engine`**](https://github.com/emailens/engine) | `v0.12.3` (npm) | Core email compatibility & CSS scoring (298 features, 21 clients) | `npm install @emailens/engine` |
-| [**`@emailens/cli`**](https://github.com/emailens/cli) | `v0.6.0` (npm) | Terminal linting & automated CI/CD exit codes | `npx @emailens/cli lint email.html` |
-| [**`@emailens/mcp`**](https://github.com/emailens/mcp) | `v0.8.0` (npm) | Email QA in Claude Code, Cursor, and AI agents | `claude mcp add emailens -- npx -y @emailens/mcp` |
-| [**`emailens/action`**](https://github.com/emailens/action) | `v1` (Action) | Pull request quality gate in GitHub Actions | `uses: emailens/action@v1` |
-| [**`emailens/vscode`**](https://github.com/emailens/vscode) | *In Development* | Editor linting & side-by-side Outlook preview | *Coming soon to Marketplace* |
+| [**`@emailens/engine`**](https://github.com/emailens/engine) | OSS | Core email compatibility and CSS scoring | `npm install @emailens/engine` |
+| [**`@emailens/cli`**](https://github.com/emailens/cli) | OSS | Terminal linting and CI checks | `npx @emailens/cli lint email.html` |
+| [**`@emailens/mcp`**](https://github.com/emailens/mcp) | OSS | Email QA in Claude Code, Cursor, and AI agents | `claude mcp add emailens -- npx -y @emailens/mcp` |
+| [**`emailens/action`**](https://github.com/emailens/action) | OSS | Pull request quality gate in GitHub Actions | `uses: emailens/action@v1` |
+| [**`emailens/vscode`**](https://github.com/emailens/vscode) | OSS | Editor linting and side-by-side Outlook preview | `code --install-extension ...` |
 
 ---
 
-## ⚡ 1. The Core Engine (`@emailens/engine`)
+## ⚡ Start here: CLI
 
-The open-source core powers all Emailens tooling. It parses HTML, simulates client quirks, transforms CSS per client, and evaluates 298 rules with 1,288 automated tests.
-
-```bash
-npm install @emailens/engine
-```
-
-```typescript
-import { auditEmail } from "@emailens/engine";
-
-const report = await auditEmail(htmlSource, {
-  clients: ["gmail-web", "outlook-windows", "apple-mail"],
-});
-
-console.log(report.overallCompatibility); // 0-100 worst-client score
-console.log(report.compatibility);        // per-client scores & issues
-console.log(report.spam);                 // heuristic spam flags
-console.log(report.accessibility);        // WCAG contrast & alt checks
-```
-
----
-
-## 💻 2. Terminal Linting (`@emailens/cli`)
-
-Analyze files locally or fail CI pipelines on breaking markup:
+The easiest entry point is the CLI. It works locally, in CI, and in developer workflows without needing a hosted account.
 
 ```bash
-# Analyze a single email
+npx @emailens/cli lint email.html
+```
+
+```bash
 npx @emailens/cli analyze email.html
-
-# Lint an entire template directory with a minimum score threshold
-npx @emailens/cli lint ./emails --threshold 80
+npx @emailens/cli preview email.html
 ```
 
 ---
 
-## 🤖 3. AI Coding Workflow (`@emailens/mcp`)
+## ☁️ Hosted SaaS
 
-AI models write great code, but routinely generate email HTML that fails in Outlook, strips styles in Gmail, and breaks dark mode.
+The open-source packages are the local developer toolchain. [emailens.dev](https://emailens.dev) is the hosted SaaS for teams that want:
 
-Connect Emailens to **Claude Code** or **Cursor** so your agent can lint, audit, and self-repair emails directly:
+- real browser screenshots across 21 clients
+- shareable preview and audit links
+- visual diffing between email revisions
+- delivery checks and team workflows
 
-```bash
-claude mcp add emailens -- npx -y @emailens/mcp
-```
-
-Included tools: `preview_email`, `analyze_email`, `audit_email`, `fix_email`, `diff_emails`, `check_deliverability`, `list_clients`.
-
----
-
-## 🚀 4. GitHub Actions (`emailens/action`)
-
-Block pull requests that introduce email regressions:
-
-```yaml
-- uses: emailens/action@v1
-  with:
-    pattern: "emails/**/*.html"
-    threshold: "75"
-```
+The SaaS is an upgrade path for previewing and collaboration, not a replacement for the local CLI engine.
 
 ---
 
-## ☁️ Hosted QA SaaS ([emailens.dev](https://emailens.dev))
+## 🧠 Why developers use Emailens
 
-While the core tools run 100% offline, [emailens.dev](https://emailens.dev) provides hosted infrastructure for teams:
-
-- **Real Browser Screenshots:** High-fidelity captures across 21 real clients in light and dark mode.
-- **Client Share Links:** Share preview audits with stakeholders without requiring an account.
-- **Visual Diff Engine:** Pixel-level regression comparisons between email revisions.
-- **Pre-Send Delivery Gate:** REST API and webhook blocking deliverability and spam issues before launch.
-- **Self-Healing AI Builder:** Describes and compiles templates, automatically running self-repair loops until output passes 90+ on every client.
+- Works offline with no account required
+- Flags issues before an email ships
+- Handles HTML, React Email, MJML, and Maizzle
+- Enforces CI quality gates on pull requests
+- Integrates with AI agents and coding workflows
 
 ---
-
-<div align="center">
 
 Made with care for developers who hate broken inboxes.  
 **[emailens.dev](https://emailens.dev)**
 
-</div>

@@ -55,7 +55,7 @@
 | [**`@emailens/cli`**](https://github.com/emailens/cli) | ![npm](https://img.shields.io/npm/v/@emailens/cli?label=) | Terminal linting with line:column findings & CI exit codes | `npx @emailens/cli lint email.html` |
 | [**`@emailens/mcp`**](https://github.com/emailens/mcp) | ![npm](https://img.shields.io/npm/v/@emailens/mcp?label=) | Email QA in Claude Code, Cursor, and AI agents | `claude mcp add emailens -- npx -y @emailens/mcp` |
 | [**`emailens/action`**](https://github.com/emailens/action) | ![tag](https://img.shields.io/github/v/tag/emailens/action?label=) | Pull request quality gate in GitHub Actions | `uses: emailens/action@v1` |
-| [**`emailens/vscode`**](https://github.com/emailens/vscode) | *Pre-release* | Editor linting, Outlook preview & Quick Fixes | *Build from source; Marketplace soon* |
+| [**`emailens/vscode`**](https://github.com/emailens/vscode) | *In development* | Editor linting, Outlook preview & Quick Fixes | *Not released yet* |
 
 ---
 

@@ -12,11 +12,11 @@
 **Write once. Know how it behaves across 21 email clients.**
 
 [![npm engine](https://img.shields.io/npm/v/@emailens/engine?label=@emailens/engine&color=8a7544)](https://www.npmjs.com/package/@emailens/engine)
-[![tests](https://img.shields.io/badge/tests-1288%20passing-brightgreen)]()
+[![CI](https://github.com/emailens/engine/actions/workflows/ci.yml/badge.svg)](https://github.com/emailens/engine/actions/workflows/ci.yml)
 [![npm cli](https://img.shields.io/npm/v/@emailens/cli?label=@emailens/cli&color=blue)](https://www.npmjs.com/package/@emailens/cli)
 [![npm mcp](https://img.shields.io/npm/v/@emailens/mcp?label=@emailens/mcp&color=blue)](https://www.npmjs.com/package/@emailens/mcp)
 [![GitHub Action](https://img.shields.io/badge/GitHub-Action-2088FF)](https://github.com/emailens/action)
-[![license](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
+[![license](https://img.shields.io/badge/license-MIT-green)](https://github.com/emailens/engine/blob/main/LICENSE)
 
 <br />
 
@@ -28,20 +28,20 @@
 
 <p align="center">
   <b>Your email looks perfect in Apple Mail. Gmail strips half the CSS. Outlook renders it in Microsoft Word.</b><br/>
-  Across <b>298 CSS and HTML features</b> tracked, only <b>6 are fully supported</b> across all 21 email clients.<br/>
-  Emailens catches the other 292 before your users do: in the engine, in your terminal, in CI, and in AI coding agents.
+  Of the <b>300 CSS and HTML features</b> the engine tracks, only <b>6 work in all 21</b> email clients.<br/>
+  Emailens catches the other 294 before your readers do: in your code, your terminal, your editor, CI and AI coding agents.
 </p>
 
 <div align="center">
 
-![emailens terminal lint output](https://raw.githubusercontent.com/emailens/.github/main/docs/lint-demo.png)
+![Real output of npx @emailens/cli lint on a welcome email: dark-mode contrast errors, gap and flex in Outlook Classic, box-shadow in Gmail, a quoted font in Yahoo Mail](https://raw.githubusercontent.com/emailens/.github/main/docs/lint-demo.png)
 
 </div>
 
 <div align="center">
 
 **Frameworks:** React Email &nbsp;·&nbsp; MJML &nbsp;·&nbsp; Maizzle &nbsp;·&nbsp; Tailwind CSS &nbsp;·&nbsp; Raw HTML  
-**Clients:** Gmail &nbsp;·&nbsp; Outlook &nbsp;·&nbsp; Apple Mail &nbsp;·&nbsp; Yahoo Mail &nbsp;·&nbsp; Thunderbird &nbsp;·&nbsp; HEY &nbsp;·&nbsp; Superhuman &nbsp;·&nbsp; Samsung &nbsp;·&nbsp; Proton
+**Clients:** Gmail &nbsp;·&nbsp; Outlook (Classic, New, 365, Mac, mobile) &nbsp;·&nbsp; Apple Mail &nbsp;·&nbsp; Yahoo Mail &nbsp;·&nbsp; Samsung Mail &nbsp;·&nbsp; Thunderbird &nbsp;·&nbsp; HEY &nbsp;·&nbsp; Proton &nbsp;·&nbsp; AOL &nbsp;·&nbsp; Fastmail &nbsp;·&nbsp; Superhuman
 
 </div>
 
@@ -51,17 +51,17 @@
 
 | Package | Status | Use It For | Quick Start |
 |---|---|---|---|
-| [**`@emailens/engine`**](https://github.com/emailens/engine) | `v0.12.3` (npm) | Core email compatibility & CSS scoring (298 features, 21 clients) | `npm install @emailens/engine` |
-| [**`@emailens/cli`**](https://github.com/emailens/cli) | `v0.6.0` (npm) | Terminal linting & automated CI/CD exit codes | `npx @emailens/cli lint email.html` |
-| [**`@emailens/mcp`**](https://github.com/emailens/mcp) | `v0.8.0` (npm) | Email QA in Claude Code, Cursor, and AI agents | `claude mcp add emailens -- npx -y @emailens/mcp` |
-| [**`emailens/action`**](https://github.com/emailens/action) | `v1` (Action) | Pull request quality gate in GitHub Actions | `uses: emailens/action@v1` |
-| [**`emailens/vscode`**](https://github.com/emailens/vscode) | *In Development* | Editor linting & side-by-side Outlook preview | *Coming soon to Marketplace* |
+| [**`@emailens/engine`**](https://github.com/emailens/engine) | ![npm](https://img.shields.io/npm/v/@emailens/engine?label=) | Core compatibility analysis & per-client CSS scoring (300 features, 21 clients) | `npm install @emailens/engine` |
+| [**`@emailens/cli`**](https://github.com/emailens/cli) | ![npm](https://img.shields.io/npm/v/@emailens/cli?label=) | Terminal linting with line:column findings & CI exit codes | `npx @emailens/cli lint email.html` |
+| [**`@emailens/mcp`**](https://github.com/emailens/mcp) | ![npm](https://img.shields.io/npm/v/@emailens/mcp?label=) | Email QA in Claude Code, Cursor, and AI agents | `claude mcp add emailens -- npx -y @emailens/mcp` |
+| [**`emailens/action`**](https://github.com/emailens/action) | ![tag](https://img.shields.io/github/v/tag/emailens/action?label=) | Pull request quality gate in GitHub Actions | `uses: emailens/action@v1` |
+| [**`emailens/vscode`**](https://github.com/emailens/vscode) | *Pre-release* | Editor linting, Outlook preview & Quick Fixes | *Build from source; Marketplace soon* |
 
 ---
 
 ## ⚡ 1. The Core Engine (`@emailens/engine`)
 
-The open-source core powers all Emailens tooling. It parses HTML, simulates client quirks, transforms CSS per client, and evaluates 298 rules with 1,288 automated tests.
+The open-source core powers all Emailens tooling. It compiles React Email, MJML and Maizzle, transforms CSS per client, simulates dark mode, and checks 300 CSS and HTML features plus spam, accessibility, link and image quality.
 
 ```bash
 npm install @emailens/engine
@@ -70,28 +70,25 @@ npm install @emailens/engine
 ```typescript
 import { auditEmail } from "@emailens/engine";
 
-const report = await auditEmail(htmlSource, {
-  clients: ["gmail-web", "outlook-windows", "apple-mail"],
-});
+const report = auditEmail(htmlSource, { framework: "jsx" });
 
-console.log(report.overallCompatibility); // 0-100 worst-client score
-console.log(report.compatibility);        // per-client scores & issues
-console.log(report.spam);                 // heuristic spam flags
-console.log(report.accessibility);        // WCAG contrast & alt checks
+console.log(report.compatibility.scores["outlook-windows"]); // per-client score
+console.log(report.spam);          // heuristic spam flags
+console.log(report.accessibility); // WCAG contrast & alt checks
 ```
 
 ---
 
 ## 💻 2. Terminal Linting (`@emailens/cli`)
 
-Analyze files locally or fail CI pipelines on breaking markup:
+Lint locally, no account and no network, or fail a CI job on breaking markup:
 
 ```bash
-# Analyze a single email
-npx @emailens/cli analyze email.html
+# Lint one email: findings with line:column
+npx @emailens/cli lint email.html
 
-# Lint an entire template directory with a minimum score threshold
-npx @emailens/cli lint ./emails --threshold 80
+# Fail the build on warnings too
+npx -y @emailens/cli lint 'emails/*.html' --fail-on-warning
 ```
 
 ---
@@ -106,7 +103,7 @@ Connect Emailens to **Claude Code** or **Cursor** so your agent can lint, audit,
 claude mcp add emailens -- npx -y @emailens/mcp
 ```
 
-Included tools: `preview_email`, `analyze_email`, `audit_email`, `fix_email`, `diff_emails`, `check_deliverability`, `list_clients`.
+Included tools: `preview_email`, `analyze_email`, `audit_email`, `fix_email`, `diff_emails`, `check_deliverability`, `list_clients`, plus hosted `capture_screenshots` and `share_preview` (emailens.dev API key).
 
 ---
 
@@ -121,17 +118,19 @@ Block pull requests that introduce email regressions:
     threshold: "75"
 ```
 
+With `mode: inbox` it checks the real email your app sends instead, and fails when it changes.
+
 ---
 
 ## ☁️ Hosted QA SaaS ([emailens.dev](https://emailens.dev))
 
-While the core tools run 100% offline, [emailens.dev](https://emailens.dev) provides hosted infrastructure for teams:
+The engine, the CLI, the VS Code extension and the MCP's local tools run offline. [emailens.dev](https://emailens.dev) adds what needs a server:
 
-- **Real Browser Screenshots:** High-fidelity captures across 21 real clients in light and dark mode.
-- **Client Share Links:** Share preview audits with stakeholders without requiring an account.
-- **Visual Diff Engine:** Pixel-level regression comparisons between email revisions.
-- **Pre-Send Delivery Gate:** REST API and webhook blocking deliverability and spam issues before launch.
-- **Self-Healing AI Builder:** Describes and compiles templates, automatically running self-repair loops until output passes 90+ on every client.
+- **Per-client previews:** your email rendered as each of the 21 clients would show it, in light and dark mode.
+- **Real-device checks:** screenshots from real installs, to confirm what a preview predicts.
+- **Share links and visual diffs:** send a preview to a client or teammate without an account; compare two revisions.
+- **AI Fix:** rewrites the parts a client breaks, keeping the design.
+- **Deliverability:** SPF, DKIM and DMARC checks before you send.
 
 ---
 

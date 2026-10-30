@@ -34,7 +34,7 @@
 
 <div align="center">
 
-![Real output of npx @emailens/cli lint on a welcome email: dark-mode contrast errors, gap and flex in Outlook Classic, box-shadow in Gmail, a quoted font in Yahoo Mail](https://raw.githubusercontent.com/emailens/.github/main/docs/lint-demo.png)
+![Real output of npx @emailens/cli lint on a welcome email: flex and gap in Outlook Classic, box-shadow in Gmail, a quoted font in Yahoo Mail, a short preheader](https://raw.githubusercontent.com/emailens/.github/main/docs/lint-demo.png)
 
 </div>
 

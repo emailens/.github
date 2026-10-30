@@ -11,10 +11,10 @@
 
 **Write once. Know how it behaves across 21 email clients.**
 
-[![npm engine](https://img.shields.io/npm/v/@emailens/engine?label=@emailens/engine&color=8a7544)](https://www.npmjs.com/package/@emailens/engine)
+[![npm engine](https://img.shields.io/npm/v/@emailens/engine?label=@emailens/engine&color=8a7544&cacheSeconds=86400)](https://www.npmjs.com/package/@emailens/engine)
 [![CI](https://github.com/emailens/engine/actions/workflows/ci.yml/badge.svg)](https://github.com/emailens/engine/actions/workflows/ci.yml)
-[![npm cli](https://img.shields.io/npm/v/@emailens/cli?label=@emailens/cli&color=blue)](https://www.npmjs.com/package/@emailens/cli)
-[![npm mcp](https://img.shields.io/npm/v/@emailens/mcp?label=@emailens/mcp&color=blue)](https://www.npmjs.com/package/@emailens/mcp)
+[![npm cli](https://img.shields.io/npm/v/@emailens/cli?label=@emailens/cli&color=blue&cacheSeconds=86400)](https://www.npmjs.com/package/@emailens/cli)
+[![npm mcp](https://img.shields.io/npm/v/@emailens/mcp?label=@emailens/mcp&color=blue&cacheSeconds=86400)](https://www.npmjs.com/package/@emailens/mcp)
 [![GitHub Action](https://img.shields.io/badge/GitHub-Action-2088FF)](https://github.com/emailens/action)
 [![license](https://img.shields.io/badge/license-MIT-green)](https://github.com/emailens/engine/blob/main/LICENSE)
 
@@ -51,10 +51,10 @@
 
 | Package | Status | Use It For | Quick Start |
 |---|---|---|---|
-| [**`@emailens/engine`**](https://github.com/emailens/engine) | ![npm](https://img.shields.io/npm/v/@emailens/engine?label=) | Core compatibility analysis & per-client CSS scoring (300 features, 21 clients) | `npm install @emailens/engine` |
-| [**`@emailens/cli`**](https://github.com/emailens/cli) | ![npm](https://img.shields.io/npm/v/@emailens/cli?label=) | Terminal linting with line:column findings & CI exit codes | `npx @emailens/cli lint email.html` |
-| [**`@emailens/mcp`**](https://github.com/emailens/mcp) | ![npm](https://img.shields.io/npm/v/@emailens/mcp?label=) | Email QA in Claude Code, Cursor, and AI agents | `claude mcp add emailens -- npx -y @emailens/mcp` |
-| [**`emailens/action`**](https://github.com/emailens/action) | ![tag](https://img.shields.io/github/v/tag/emailens/action?label=) | Pull request quality gate in GitHub Actions | `uses: emailens/action@v1` |
+| [**`@emailens/engine`**](https://github.com/emailens/engine) | ![npm](https://img.shields.io/npm/v/@emailens/engine?label=&cacheSeconds=86400) | Core compatibility analysis & per-client CSS scoring (300 features, 21 clients) | `npm install @emailens/engine` |
+| [**`@emailens/cli`**](https://github.com/emailens/cli) | ![npm](https://img.shields.io/npm/v/@emailens/cli?label=&cacheSeconds=86400) | Terminal linting with line:column findings & CI exit codes | `npx @emailens/cli lint email.html` |
+| [**`@emailens/mcp`**](https://github.com/emailens/mcp) | ![npm](https://img.shields.io/npm/v/@emailens/mcp?label=&cacheSeconds=86400) | Email QA in Claude Code, Cursor, and AI agents | `claude mcp add emailens -- npx -y @emailens/mcp` |
+| [**`emailens/action`**](https://github.com/emailens/action) | ![tag](https://img.shields.io/github/v/tag/emailens/action?label=&cacheSeconds=86400) | Pull request quality gate in GitHub Actions | `uses: emailens/action@v1` |
 | [**`emailens/vscode`**](https://github.com/emailens/vscode) | *In development* | Editor linting, Outlook preview & Quick Fixes | *Not released yet* |
 
 ---

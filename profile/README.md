@@ -20,7 +20,7 @@
 
 <br />
 
-[Web App](https://emailens.dev) · [Documentation](https://emailens.dev/docs) · [State of Email CSS Report](https://emailens.dev/email-css/report)
+[⚡ Try Live Playground (Free, No Signup)](https://emailens.dev/try) · [Web App](https://emailens.dev) · [Documentation](https://emailens.dev/docs) · [State of Email CSS Report](https://emailens.dev/email-css/report)
 
 ---
 
@@ -30,6 +30,10 @@
   <b>Your email looks perfect in Apple Mail. Gmail strips half the CSS. Outlook renders it in Microsoft Word.</b><br/>
   Of the <b>300 CSS and HTML features</b> the engine tracks, only <b>6 work in all 21</b> email clients.<br/>
   Emailens catches the other 294 before your readers do: in your code, your terminal, your editor, CI and AI coding agents.
+</p>
+
+<p align="center">
+  <b>Sub-50ms offline AST simulation across 21 clients</b> — built for instant hot-reload loops, CI gates, and AI agent self-repair without 90-second VM screenshot queues.
 </p>
 
 <div align="center">
@@ -97,13 +101,13 @@ npx -y @emailens/cli lint 'emails/*.html' --fail-on-warning
 
 AI models write great code, but routinely generate email HTML that fails in Outlook, strips styles in Gmail, and breaks dark mode.
 
-Connect Emailens to **Claude Code** or **Cursor** so your agent can lint, audit, and self-repair emails directly:
+Because `@emailens/engine` runs locally in **sub-50ms** (instead of 45–90s cloud VM queues), your coding agent can lint, audit, and self-repair emails in a rapid feedback loop before you commit:
 
 ```bash
 claude mcp add emailens -- npx -y @emailens/mcp
 ```
 
-Included tools: `preview_email`, `analyze_email`, `audit_email`, `fix_email`, `diff_emails`, `check_deliverability`, `list_clients`, plus hosted `capture_screenshots` and `share_preview` (emailens.dev API key).
+Included tools: `audit_email`, `fix_email`, `diff_emails`, `preview_email`, `analyze_email`, `check_deliverability`, `list_clients`, plus hosted `capture_screenshots` and `share_preview` (emailens.dev API key).
 
 ---
 

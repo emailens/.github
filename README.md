@@ -20,7 +20,7 @@
 
 <br />
 
-[Web App](https://emailens.dev) · [Documentation](https://emailens.dev/docs) · [State of Email CSS Report](https://emailens.dev/email-css/report)
+[⚡ Try Live Playground (Free, No Signup)](https://emailens.dev/try) · [Web App](https://emailens.dev) · [Documentation](https://emailens.dev/docs) · [State of Email CSS Report](https://emailens.dev/email-css/report)
 
 ---
 
@@ -28,8 +28,12 @@
 
 <p align="center">
   <b>Your email looks perfect in Apple Mail. Gmail strips half the CSS. Outlook renders it in Microsoft Word.</b><br/>
-  Across <b>298 CSS and HTML features</b> tracked, only <b>6 are fully supported</b> across all 21 clients.<br/>
-  Emailens catches the other 292 before your users do: in the engine, in your terminal, in CI, and in AI coding agents.
+  Across <b>300 CSS and HTML features</b> tracked, only <b>6 are fully supported</b> across all 21 clients.<br/>
+  Emailens catches the other 294 before your users do: in the engine, in your terminal, in CI, and in AI coding agents.
+</p>
+
+<p align="center">
+  <b>Sub-50ms offline AST simulation across 21 clients</b> — built for instant hot-reload loops, CI gates, and AI agent self-repair without 90-second VM screenshot queues.
 </p>
 
 <div align="center">
